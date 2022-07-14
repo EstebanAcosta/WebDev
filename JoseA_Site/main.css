@@ -1,0 +1,23 @@
+h1{
+  text-decoration: underline;
+  text-align: center;
+  color: white;
+}
+
+body
+{
+  background-color: brown;
+}
+
+#nav_bar
+{
+  
+}
+
+#footer
+{
+  border-radius: 20px;
+  background-color: AntiqueWhite;
+  text-align: center;
+  line-height: .8;
+}

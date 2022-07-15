@@ -1,7 +1,16 @@
-h1{
+h1,h2,h3
+{
   text-decoration: underline;
+}
+
+h1{
   text-align: center;
   color: white;
+}
+
+h3
+{
+  font-size: 17px;
 }
 
 body
@@ -9,15 +18,58 @@ body
   background-color: brown;
 }
 
-#nav_bar
+.nav_bar {
+  font-family: Times,"Times New Roman";
+  border: 1px solid beige;
+  text-align: center;
+  background-color: beige;
+  border-radius: 30px;
+}
+
+.nav_bar button
 {
-  
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 30px;
+}
+
+.nav_bar button:hover
+{
+  background-color: LightGray;
+}
+
+.navbar_content
+{
+
+}
+#pagina_principal
+{
+
+}
+
+#cuentos
+{
+
+}
+
+#poemas
+{
+
+}
+
+#quien_somos
+{
+
 }
 
 #footer
 {
   border-radius: 20px;
-  background-color: AntiqueWhite;
   text-align: center;
-  line-height: .8;
+  line-height: .7;
+  font-size: 12px;
 }

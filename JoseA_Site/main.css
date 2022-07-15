@@ -1,3 +1,11 @@
+body,html
+{
+  height:100%;
+  margin: 0;
+  font-family: Times,"Times New Roman";
+  color:white;
+}
+
 h1,h2,h3
 {
   text-decoration: underline;
@@ -13,63 +21,61 @@ h3
   font-size: 17px;
 }
 
-body
-{
-  background-color: brown;
-}
-
 .nav_bar {
-  font-family: Times,"Times New Roman";
-  border: 1px solid beige;
-  text-align: center;
-  background-color: beige;
-  border-radius: 30px;
-}
-
-.nav_bar button
-{
-  background-color: inherit;
+  background-color: #555;
+  color: white;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 14px 16px;
-  font-size: 15px;
-  border-radius: 30px;
+  font-size: 18px;
+  float: left;
+  width: 20%;
 }
 
-.nav_bar button:hover
+.nav_bar:hover
 {
-  background-color: LightGray;
+  background-color: #777;
 }
 
 .navbar_content
 {
-
+  display: none;
+  padding: 100px 20px;
+  height: 100%;
+  text-align: center;
 }
+
 #pagina_principal
 {
-
+  background-color: olive;
 }
 
-#cuentos
+#libros
 {
-
+  background-color: maroon;
 }
 
 #poemas
 {
+  background-color: red;
+}
 
+#cuentos
+{
+  background-color: brown
 }
 
 #quien_somos
 {
-
+  background-color: slateGray;
 }
 
 #footer
 {
-  border-radius: 20px;
+  padding: 10px;
   text-align: center;
   line-height: .7;
   font-size: 12px;
+  background-color: olive;
 }

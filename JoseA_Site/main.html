@@ -1,47 +1,35 @@
 <head>
 	<title> Los Libros de Jose Acosta </title>
-	<meta>
+  <meta charset="UTF-8">
+	<meta name="Los-Libros-De-Jose-Acosta" content="" keywords = "libros">
 	<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
-	<h1> Los Libros de Jose Acosta </h1>
+  <button type="button" id="defaultOpen" class = "nav_bar" name="pagina_principal" onclick="openTab('pagina_principal', this, 'olive')"> Pagina Principal</button>
+  <button type="button" class = "nav_bar" name="libros" onclick="openTab('libros', this, 'maroon')"> Libros </button>
+  <button type="button" class = "nav_bar" name="poemas" onclick="openTab('poemas',this,'red')"> Poemas </button>
+  <button type="button" class = "nav_bar" name="cuentos" onclick="openTab('cuentos',this, 'brown')"> Cuentos</button>
+  <button type="button" class = "nav_bar" name="quien_somos" onclick="openTab('quien_somos', this, 'slateGray') "> Quién Somos</button>
 
-	<div id = "main_section"
-		<nav class = "nav_bar">
-			<button type="button" name="pagina_principal" onclick="openCity(event, 'pagina_principal'"> Pagina Principal</button>
-			<button type="button" name="libros" onclick="openCity(event, 'libros'"> Libros </button>
-			<button type="button" name="poemas" onclick="openCity(event, 'poemas'"> Poemas </button>
-			<button type="button" name="cuentos" onclick="openCity(event, 'cuentos'"> Cuentos</button>
-			<button type="button" name="quien_somos" onclick="openCity(event, 'quien_somos'"> Quien Somos</button>
-			<button type="button" name="recomendaciones" onclick="openCity(event, 'recomendaciones'"> Recomendaciones</button>
-		</nav>
-
-	<br>
-
-	<section id = "pagina_principal">
-		<h2> Pagina Principal </h2>
-
+	<section id = "pagina_principal" class="navbar_content">
+		<h2> Los Libros de Jose Acosta </h2>
 	</section>
 
-	<section id = "libros">
+	<section id = "libros" class="navbar_content">
 		<h2> Libros </h2>
-
 	</section>
 
-	<section id = "poemas">
+	<section id = "poemas" class="navbar_content">
 		<h2> Poemas </h2>
-
 	</section>
 
-	<section id = "cuentos">
+	<section id = "cuentos" class="navbar_content">
 		<h2> Cuentos </h2>
-
 	</section>
 
-	<section id = "quien_somos">
+	<section id = "quien_somos" class="navbar_content">
 		<h2> Quién Somos? </h2>
-
 	</section>
 
 	<footer id = "footer">
@@ -50,4 +38,31 @@
 		<p> Numero de telefono: 111-111-1111 </p>
 		<p> Correo Electronico: a@hotmail.com </p>
 	</footer>
+
+	<script>
+		function openTab(pageName,elmnt,color) {
+		  var i, navbar_content, nav_bar, footer;
+		  navbar_content = document.getElementsByClassName("navbar_content");
+
+			// Hide all elements with class="tabcontent" by default */
+			for (i = 0; i < navbar_content.length; i++) {
+		   navbar_content[i].style.display = "none";
+		  }
+
+			// Remove the background color of all tablinks/buttons
+		  nav_bar = document.getElementsByClassName("nav_bar");
+		  for (i = 0; i < nav_bar.length; i++) {
+		    nav_bar[i].style.backgroundColor = "";
+		  }
+
+			// Show the specific tab content
+		  document.getElementById(pageName).style.display = "block";
+
+			// Add the specific color to the button used to open the tab content
+		  elmnt.style.backgroundColor = color;
+
+		}
+		// Get the element with id="defaultOpen" and click on it
+		document.getElementById("defaultOpen").click();
+	</script>
 </body>

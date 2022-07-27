@@ -1,9 +1,9 @@
-body,html
+body
 {
-  height:100%;
   margin: 0;
   font-family: Times,"Times New Roman";
   color:white;
+  height: 100%;
 }
 
 h1,h2,h3
@@ -42,40 +42,31 @@ h3
 {
   display: none;
   padding: 100px 20px;
-  height: 100%;
+  height: 1500px;
   text-align: center;
 }
 
-#pagina_principal
+#pagina_principal{background-color: olive}
+#libros{background-color: maroon}
+#poemas{background-color: red}
+#cuentos {background-color: brown}
+#quienes_somos {background-color: slateGray}
+
+#qs_main
 {
-  background-color: olive;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: white;
+  height: 100%;
+  margin: auto;
+  font-size: 18px;
+  /* overflow: auto; */
 }
 
-#libros
-{
-  background-color: maroon;
-}
-
-#poemas
-{
-  background-color: red;
-}
-
-#cuentos
-{
-  background-color: brown
-}
-
-#quien_somos
-{
-  background-color: slateGray;
-}
-
-#footer
+footer
 {
   padding: 10px;
   text-align: center;
   line-height: .7;
   font-size: 12px;
-  background-color: olive;
 }

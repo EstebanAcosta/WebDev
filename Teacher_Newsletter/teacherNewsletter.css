@@ -1,20 +1,73 @@
 html
 {
-  background-color: brown;
+  background-color: antiquewhite;
 }
 
 h1
 {
   margin:auto;
   text-align: center;
+  font-family: cursive;
+  font-size: 3em;
+  background-image: url(img/roses.jpg);
+  border-radius: 20px;
+  margin-bottom: 40px;
 }
 
-h2
+h2,h3
 {
-  
+  text-decoration: underline;
+  text-align: center;
+  font-family: fantasy;
+}
+
+section
+{
+  border-style: solid;
+  border-radius: 20px;
+  border-color: burlywood;
+  width: 400px;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+#bdShoutouts
+{
+  float:right;
+}
+
+#importantDates
+{
+
 }
 
 aside
 {
   float:left;
+  border-style: solid;
+  border-radius: 20px;
+  border-color: burlywood;
+  margin-right: 100px;
+  padding: 20px;
+}
+
+aside ul
+{
+    list-style-type: square;
+
+}
+
+aside ul li
+{
+    margin-bottom: 15px;
+}
+
+footer
+{
+  text-align: center;
+}
+
+.font_style
+{
+  display: inline-block;
 }

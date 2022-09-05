@@ -10,7 +10,6 @@ h1
   font-family: cursive;
   font-size: 3em;
   background-image: url(img/roses.jpg);
-  border-radius: 20px;
   margin-bottom: 40px;
 }
 
@@ -21,19 +20,36 @@ h2,h3
   font-family: fantasy;
 }
 
+nav
+{
+  margin: auto;
+  text-align: center;
+}
+nav ul
+{
+  /* list-style-type: none; */
+  display: flex;
+  margin: 0 10px;
+}
+
+nav ul li
+{
+  flex:auto;
+  list-style-type: none;
+  border: solid black;
+}
+
 section
 {
   border-style: solid;
   border-radius: 20px;
   border-color: burlywood;
   width: 400px;
-  margin: auto;
-  margin-bottom: 30px;
 }
 
 #bdShoutouts
 {
-  float:right;
+
 }
 
 #importantDates
@@ -41,13 +57,25 @@ section
 
 }
 
+article
+{
+  float: left;
+  width: 30%;
+  margin: 10px;
+}
+
+section
+{
+    margin: 20px;
+    clear: left;
+}
+
 aside
 {
-  float:left;
   border-style: solid;
   border-radius: 20px;
   border-color: burlywood;
-  margin-right: 100px;
+  margin: 30px;
   padding: 20px;
 }
 
@@ -64,6 +92,9 @@ aside ul li
 
 footer
 {
+  clear:both;
+  border-top-style: solid;
+  border-top-color: burlywood;
   text-align: center;
 }
 

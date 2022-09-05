@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta lang = "en">
+    <link rel="stylesheet" href="Calculator.css">
+    <title> Calculator </title>
+     <script src="Calculator.js"></script>
+  </head>
+  <body>
+     <h1> Calculator </h1>
+      <table>
+          <tr>
+            <td colspan = "4" > <input id = "display" name = "display" type = "text" value = "0" disabled> </td>
+          </tr>
+          <tr>
+            <td> <input name = "clear" type = "button" value="C" onclick="clearDisplay()"> </td>
+            <td> <input name = "advanced" type = "button" value="ADVC" onclick="showAdvancedOptions()"> </td>
+            <td> <input name = "plusOrminus" type = "button" value="+/-" onclick="negateNumber()"> </td>
+            <td> <input name = "percentage" type = "button" value="%" onclick="percentageOfNumber()"> </td>
+          </tr>
+          <tr>
+            <td> <input name = "1" type = "button" value="1" onclick="displayNumber(1)"> </td>
+            <td> <input name = "2" type = "button" value="2" onclick="displayNumber(2)"> </td>
+            <td> <input name = "3" type = "button" value="3" onclick="displayNumber(3)"> </td>
+            <td> <input name = "add" type = "button" value="+" onclick="arithmetic('+')"> </td>
+          </tr>
+          <tr>
+            <td> <input name = "4" type = "button" value="4" onclick="displayNumber(4)"> </td>
+            <td> <input name = "5" type = "button" value="5" onclick="displayNumber(5)"> </td>
+            <td> <input name = "6" type = "button" value="6" onclick="displayNumber(6)"> </td>
+            <td> <input name = "minus" type = "button" value="-" onclick="arithmetic('-')"> </td>
+          </tr>
+          <tr>
+            <td> <input name = "7" type = "button" value="7" onclick="displayNumber(7)"> </td>
+            <td> <input name = "8" type = "button" value="8" onclick="displayNumber(8)"> </td>
+            <td> <input name = "9" type = "button" value="9" onclick="displayNumber(9)"> </td>
+            <td> <input name = "multiply" type = "button" value="*" onclick="arithmetic('*')"> </td>
+          </tr>
+          <tr>
+            <td> <input name = "0" type = "button" value="0" onclick="displayNumber(0)"> </td>
+            <td> <input name = "=" type = "button" value="="> </td>
+            <td> <input name = "period" type = "button" value="." onclick="addDecimalPoint()"> </td>
+            <td> <input name = "divide" type = "button" value="/" onclick="arithmetic('/')"> </td>
+          </tr>
+      </table>
+  </body>
+</html>

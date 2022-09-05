@@ -1,0 +1,37 @@
+h1
+{
+  text-align: center;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+
+body
+{
+  background-color:BurlyWood;
+}
+
+table
+{
+  margin:auto;
+  border-collapse: collapse;
+}
+
+table td
+{
+  border: white solid;
+}
+
+td #display
+{
+  width: 400px;
+  text-align: right;
+  border-radius: 20px;
+  font-size: 1.5em;
+  color: white;
+}
+
+td input
+{
+  height: 100px;
+  width: 100px;
+}

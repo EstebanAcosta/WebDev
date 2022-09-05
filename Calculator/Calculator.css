@@ -7,31 +7,51 @@ h1
 
 body
 {
-  background-color:BurlyWood;
+  background-color:Peru;
 }
 
+section
+{
+  margin-bottom: 100px;
+}
 table
 {
   margin:auto;
   border-collapse: collapse;
 }
 
-table td
+table td input
 {
   border: white solid;
+  height: 100px;
+  width: 100px;
 }
 
-td #display
+.buttons:hover
+{
+  background-color: antiquewhite;
+}
+
+.buttons:active
+{
+  background-color: LightYellow;
+}
+
+input[name="0"]
+{
+  border-bottom-left-radius: 20px;
+}
+
+input[name="divide"]
+{
+  border-bottom-right-radius: 20px;
+}
+
+#display
 {
   width: 400px;
   text-align: right;
-  border-radius: 20px;
   font-size: 1.5em;
-  color: white;
-}
-
-td input
-{
-  height: 100px;
-  width: 100px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }

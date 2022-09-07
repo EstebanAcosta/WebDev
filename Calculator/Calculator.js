@@ -1,19 +1,34 @@
 let runningTotal = 0;
 let doingArithmetic = false;
 
-//keep adding a digit to the end of the number until an arithmetic button is pressed
-function displayNumber(number)
+$(document).ready(function()
 {
-  let display = document.getElementById("display");
+  $(".numbers").click(function()
+  {
+    let number = $(this).attr("value");
 
-  //if the display shows a zero or if we are in the middle of doing any kind of
-  //arithmetic, make sure to set the display value to that digit
-  //otherwise concatonate that digit to the end of the display value
-  display.value === "0" || doingArithmetic ? display.value = number : display.value += number;
+    let display = document.getElementById("display");
 
- //set this to false since we are only concatonating digits together
-  doingArithmetic = false;
-}
+    //if the display shows a zero or if we are in the middle of doing any kind of
+    //arithmetic, make sure to set the display value to that digit
+    //otherwise concatonate that digit to the end of the display value
+    display.value === "0" || doingArithmetic ? display.value = number : display.value += number;
+
+   //set this to false since we are only concatonating digits together
+    doingArithmetic = false;
+  });
+});
+
+$(document).ready(function()
+{
+  $("#scientific").click(showScientificOptions);
+
+  $("#clear").click(clearDisplay);
+
+  $("#negate").click(negateNumber);
+
+  $("#percentage").click(percentageOfNumber);
+});
 
 function arithmetic(operation)
 {
@@ -82,6 +97,7 @@ function percentageOfNumber()
 
   display.value = String(parseFloat(display.value) / 100);
 }
+
 
 //shows the scientific buttons
 function showScientificOptions()

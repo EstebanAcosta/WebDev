@@ -1,6 +1,10 @@
 let runningTotal = 0;
 let doingArithmetic = false;
 
+
+//Jquery functions that display values on the display, enable/disable scientific buttons options,
+//clear values on the display, negate the value on the display, takes percentage of a vlue and adds
+//a decimal point to the value
 jQuery(function()
 {
   let display = document.getElementById("display");
@@ -78,18 +82,20 @@ function arithmetic(operation)
 //shows the scientific buttons
 function showScientificOptions()
 {
-  //gets the calculator display element
+  //gets the calculator display 
   let display = document.getElementById("display");
 
-  //gets the scientific button on the calculator
+  //gets the scientific button from the calculator
   let scientificButton = document.getElementById("scientific");
 
   //creates a custom list of additional functions that will be added to the calculator
   const functions = ["sin", "cos" , "tan" , "sin-1" , "cos-1" , "tan-1" , "ln" , "log" , "x!" , "√" , "(" , ")" , "inv" , "x^2" , "x^y"];
 
-  const trigFunctions = ["sin", "cos" , "tan" , "sin-1" , "cos-1" , "tan-1"];
+  const trigFunctions = functions.slice(0,6);
 
-  //this var keeps track of how many elements we want in a specific row
+  const logFunctions = functions.slice(6,8);
+
+  //keeps track of how many elements we want in a specific row
   const elementsInRow = 3;
 
   //keeps track of which row number in the table we are at
@@ -108,7 +114,7 @@ function showScientificOptions()
     //change it to basic
     scientificButton.value = "Basic";
 
-    //create a var that keeps track of how many elements we have in that row
+    //keeps track of how many elements we have in that table row
     let howManyInNewRow = 0;
 
     //go through our custom list of functions
@@ -137,26 +143,64 @@ function showScientificOptions()
 
       button.value = functions[i];
 
-      if(button.value === "inv")
-      {
-        button.addEventListener("click", inverseFunctions);
-      }
-
-      else if(trigFunctions.includes(button.value))
-      {
-        button.addEventListener("click",trigFunctions);
-
-        button.classList.add("trigFunctions");
-      }
-
       button.type = "button";
 
       button.style.width = "100px";
 
       button.style.height = "100px";
 
+      if(button.value === "inv")
+      {
+        button.addEventListener("click", function()
+        { 
 
+        });
+      }
 
+      else if(trigFunctions.includes(button.value))
+      {
+        button.addEventListener("click",doTrigFunctions);
+      }
+
+      else if(logFunctions.includes(button.value))
+      {
+        button.addEventListener("click",doLogFunctions);
+      }
+
+      else
+      {
+        switch(button.value)
+        {
+          case "x!":
+            break;
+          case "√":
+            button.addEventListener("click",function() 
+            {
+              let display = document.getElementById("display");
+
+              let val = parseFloat(display.value);
+            
+               display.value = String(Math.sqrt(val));
+            });
+            break;
+          case  "(":
+            break;  
+          case ")":
+             break;  
+          case "x^2":
+            button.addEventListener("click",function() 
+            {
+              let display = document.getElementById("display");
+
+              let val = parseFloat(display.value);
+              
+              display.value = String(Math.pow(val,2));
+            });
+            break;
+          case "x^y":
+            break;
+        }
+      }
       //if we are on the last row of the table and we are just about to start appending new buttons to this row
       if(howManyInNewRow === 1 && rowNum === (rowNums - 1))
       {
@@ -200,22 +244,65 @@ function showScientificOptions()
       //start from the fourth element of that row
       while(tableRow.children.length > 4)
       {
-
+        //and all the elements to the right of the fourth element on that row
        tableRow.children[4].remove();
       }
     }
 
+    //change the width of the display to its original size
     display.style.width = String(100 * tableRow.children.length) + "px";
 
     display.parentElement.colSpan = String(tableRow.children.length);
 
+    //round out the bottom right corner of the calculator
     tableRow.children[3].children[0].style.borderBottomRightRadius = "20px";
   }
 }
 
-function trigFunctions()
+function doTrigFunctions()
 {
+  let display = document.getElementById("display")
 
+  let val = parseFloat(display.value);
+
+  switch(event.target.value)
+  {
+    case "sin":
+      Math.sin(val);
+      break;
+    case "cos":
+      Math.cos(val);
+      break;
+    case "tan":
+      Math.tan(val);
+      break;
+    case "sin-1":
+      Math.asin(val);
+      break;
+    case "cos-1":
+      Math.acos(val);
+      break;
+    case "tan-1":
+      Math.atan(val);
+      break;
+  }
+}
+
+function doLogFunctions()
+{
+  let display = document.getElementById("display")
+
+  let val = parseFloat(display.value);
+
+  switch(event.target.value)
+  {
+    case "ln":
+      Math.log(val);
+      break;
+    case "log":
+      Math.log10(val);
+      break;
+  }
 }
 
 function inverseFunctions()

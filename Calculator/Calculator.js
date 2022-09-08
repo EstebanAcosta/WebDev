@@ -1,13 +1,13 @@
 let runningTotal = 0;
 let doingArithmetic = false;
 
-$(document).ready(function()
+jQuery(function()
 {
-  $(".numbers").click(function()
+  let display = document.getElementById("display");
+
+  $(".numbers").on("click", function()
   {
     let number = $(this).attr("value");
-
-    let display = document.getElementById("display");
 
     //if the display shows a zero or if we are in the middle of doing any kind of
     //arithmetic, make sure to set the display value to that digit
@@ -17,17 +17,31 @@ $(document).ready(function()
    //set this to false since we are only concatonating digits together
     doingArithmetic = false;
   });
-});
 
-$(document).ready(function()
-{
-  $("#scientific").click(showScientificOptions);
+  $("#scientific").on("click",showScientificOptions);
 
-  $("#clear").click(clearDisplay);
+  $("#clear").on("click",function()
+  {
+    display.value = "0";
 
-  $("#negate").click(negateNumber);
+    runningTotal = 0;
+  });
 
-  $("#percentage").click(percentageOfNumber);
+  $("#negate").on("click",function()
+  {
+    display.value = String(-1*parseFloat(display.value));
+  });
+
+  $("#percentage").on("click",function()
+  {
+    display.value = String(parseFloat(display.value) / 100);
+  });
+
+  $("#decimal").on("click",function()
+  {
+    if(!display.value.includes("."))  display.value+=".";
+  });
+
 });
 
 function arithmetic(operation)
@@ -61,44 +75,6 @@ function arithmetic(operation)
   // console.log(runningTotal);
 }
 
-//add a decimal point to the end of the number if said decimal point isn't already there
-function addDecimalPoint()
-{
-  let display = document.getElementById("display");
-
-  if(!display.value.includes("."))
-  {
-    display.value+=".";
-  }
-}
-
-//clear the number on the display
-function clearDisplay()
-{
-  let display = document.getElementById("display");
-
-  display.value = "0";
-
-  runningTotal = 0;
-}
-
-//negate the number on the display
-function negateNumber()
-{
-  let display = document.getElementById("display");
-
-  display.value = String(-1*parseFloat(display.value));
-}
-
-//converts the number to a decimal
-function percentageOfNumber()
-{
-  let display = document.getElementById("display");
-
-  display.value = String(parseFloat(display.value) / 100);
-}
-
-
 //shows the scientific buttons
 function showScientificOptions()
 {
@@ -110,6 +86,8 @@ function showScientificOptions()
 
   //creates a custom list of additional functions that will be added to the calculator
   const functions = ["sin", "cos" , "tan" , "sin-1" , "cos-1" , "tan-1" , "ln" , "log" , "x!" , "√" , "(" , ")" , "inv" , "x^2" , "x^y"];
+
+  const trigFunctions = ["sin", "cos" , "tan" , "sin-1" , "cos-1" , "tan-1"];
 
   //this var keeps track of how many elements we want in a specific row
   const elementsInRow = 3;
@@ -157,13 +135,27 @@ function showScientificOptions()
 
       button.classList.add("buttons", "scientificButtons");
 
-      button.type = "button";
-
       button.value = functions[i];
+
+      if(button.value === "inv")
+      {
+        button.addEventListener("click", inverseFunctions);
+      }
+
+      else if(trigFunctions.includes(button.value))
+      {
+        button.addEventListener("click",trigFunctions);
+
+        button.classList.add("trigFunctions");
+      }
+
+      button.type = "button";
 
       button.style.width = "100px";
 
       button.style.height = "100px";
+
+
 
       //if we are on the last row of the table and we are just about to start appending new buttons to this row
       if(howManyInNewRow === 1 && rowNum === (rowNums - 1))
@@ -199,12 +191,16 @@ function showScientificOptions()
 
     rowNum = 1;
 
+    //go through each row of the table
     for(; rowNum < rowNums; rowNum++)
     {
+      //get that specific row
       tableRow = document.getElementById("row" + String(rowNum));
 
+      //start from the fourth element of that row
       while(tableRow.children.length > 4)
       {
+
        tableRow.children[4].remove();
       }
     }
@@ -215,4 +211,14 @@ function showScientificOptions()
 
     tableRow.children[3].children[0].style.borderBottomRightRadius = "20px";
   }
+}
+
+function trigFunctions()
+{
+
+}
+
+function inverseFunctions()
+{
+
 }

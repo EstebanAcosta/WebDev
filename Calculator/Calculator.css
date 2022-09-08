@@ -27,6 +27,11 @@ table td input
   width: 100px;
 }
 
+.buttons
+{
+  font-size: 1.10em;
+}
+
 .buttons:hover
 {
   background-color: antiquewhite;
@@ -37,12 +42,12 @@ table td input
   background-color: LightYellow;
 }
 
-input[name="0"]
+#row5 td:first-child input
 {
   border-bottom-left-radius: 20px;
 }
 
-input[name="divide"]
+#row5 td:last-child input
 {
   border-bottom-right-radius: 20px;
 }

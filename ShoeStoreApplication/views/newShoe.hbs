@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<meta charset="utf-8">
+	<title> Admin Add New Shoe </title>
+</head>
+<body bgcolor="	#008080">
+
+
+{{#if csrfError}}
+{{#each csrfError}}
+<h1> {{this}}</h1>
+{{/each}}
+{{/if}}
+
+
+{{#if errorMessage}}
+{{#each errorMessage}}
+<h1> {{this}}</h1>
+{{/each}}
+{{/if}}
+
+<center ><h1 style="color: black;"> Administrator Settings</h1>
+<form method = "post" action = "/updatingNewShoes">
+	<h2>Set Name </h2>
+  <input type = "text" name = "shoe">
+
+  <h2>Set Category  </h2>
+  <input type = "radio" name = "category" value ="Both"> Both
+  <input type = "radio" name = "category" value ="Men"> Men
+  <input type = "radio" name = "category" value ="Women"> Women
+
+  <h2>Set Type </h2>
+  <input type = "radio" name = "type" value = "StyleWear"> StyleWear
+    <input type = "radio" name = "type" value = "Running"> Running
+
+  <h2>Set Price  </h2>
+	<input type="number" name="price" min="1" max ="1000">
+	<br>
+
+	<h2>Set Quantity </h2>
+	<input type="number" name="quantity" min="1">
+	<br>
+
+  <h2>Set image </h2>
+  <input type = "url" name = "link">
+  <br>
+  <br>
+	<input type ="submit" value ="Add To Stock" >
+	<br>
+
+  <input type ="hidden" name = "code" value ="{{code}}">
+	<input type = "hidden" name ="token" value = "{{token}}">
+
+</form>
+<br>
+<form method = "get" action = "/">
+	<center><input type ="submit" value ="Back to home page" >
+</form>
+</center>
+</body>
+</html>

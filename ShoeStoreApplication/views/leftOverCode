@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Bootleg Nike </title>
+</head>
+
+<!-- <body bgcolor="	#0099ff">
+
+	[{"userId": "jack" , "password" : "create"},
+	{"userId": "john" , "password" : "newest"},
+	{"userId": "esteban" , "password" : "table"},
+	{"userId": "kayla" , "password" : "milksandcookies"},
+	{"userId": "vee" , "password" : "bodypillow"},
+	{"userId": "david" , "password" : "enamoredwitheclipse"},
+	{"userId": "admin", "password": "technology"}
+	]
+ -->
+
+		  <!-- <form method="POST" action="/settings">
+		<p align = "right" style="color: lightyellow;"><a href='/settings'> Settings </a> </p>
+			</form>
+
+
+			<form method="POST" action="/shopcart">
+		<p align = "right" style="color: lightyellow;"><a href='/shopcart'> Shopping Cart </a> </p>
+			</form>
+
+		<form method="POST" action="/settings">
+		<p align = "right" style="color: lightyellow;"><a href='/login'> Logout </a> </p>
+		</form>
+
+		<p align = "right" style="color: lightyellow;"><a href='/shoes'> Our Shoes </a> </p>
+
+	<div>
+  <center> <h1 style="color: orange;"> Welcome to the Nike Page, {{userid}} </h1> </center>
+ </div>
+
+	<center><h2 style="color: lightblue;"> Below you will see our large collection of shoes and accessories </h2></center>
+	<center><h3 style="color: lightblue;"> {{message}}</h3></center>
+	<center><h3 style="color: lightgreen;"> There are several features on this site that will be useful to you </h3> </center>
+	<center><p style="color: lightyellow;" > On the upper right corner of the site there is a shopping cart feature </p></center>
+	<center> <p  style="color: lightyellow;">At the bottom of the page there is a price comparison tool</p> </center>
+
+	<center><h2> Is this your first time on this site, {{userid}}?  </h2></center>
+
+	<center><h2 style="color: orange;"> Price Comparison Tool: </h2> </center>
+
+	<form method="POST" action="/pricecompare">
+		<center><a href='/pricecompare'> Price Tool </a> </center>
+	</form>
+
+	<center><h2 style="color: orange;"> Here are the shoes you looked at in the previous session: </h2> </center>
+
+	<form method="POST" action="/savedpref">
+		<center><a href='/savedpref'> Saved Preferences </a> </center>
+	</form> -->
+
+
+
+ </body>
+</html>

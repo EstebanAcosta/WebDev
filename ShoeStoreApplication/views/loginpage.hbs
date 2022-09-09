@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset="utf-8">
+	<title>{{pageTitle}}</title>
+</head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<form method="post" action="/login">
+
+{{#if errorMessage.length}}
+  <hr/>
+  {{#each errorMessage}}
+  <h3 style="color:white;">{{this}}</h3>
+  {{/each}}
+  <hr/>
+{{/if}}
+
+		<style>
+		body, html {
+		    height: 100%;
+		    margin: 0;
+		    /* The image used */
+		    background-image: url("http://www.digitalfeedmedia.com/wp-content/uploads/2014/08/nike-kobe-bryant-china-tour-2014-tron-like-led-digital-basketball-court-07.jpg");
+				background-color: red
+		    /* Full height */
+		    height: 100%;
+
+		    /* Center and scale the image nicely */
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+		</style>
+
+	 		<body  >
+    	<center>  <h1 style="color:white;">{{pageTitle}}</h1>	</center>
+    	<center>  <h2 style="color:white;"> {{motto}}  </h2>	</center>
+      	<center> <h3 style="color:red;" >{{logininfo}}</h4>	</center>
+
+
+      	<center><table border = 2>
+        <tr>
+          <td style="color:yellow;"> User Id</td><td><input type="text" name="userid"/></td>
+        </tr>
+        <tr>
+          <td style="color: yellow;">Password</td><td><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+          <td><input type="submit" value="Login"/></td>
+        </tr>
+      </table>	</center>
+
+    </form>
+  </body>
+</html>

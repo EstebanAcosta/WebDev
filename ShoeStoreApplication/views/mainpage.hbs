@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Times;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #b4b4b4;
+    color: black;
+    float: left;
+    border: none;
+    outline: blue;
+    cursor: pointer;
+    padding: 15px 16px;
+    font-size: 20px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #788;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#men {background-color: white;}
+#Women{background-color: white;}
+#OurShoes {background-color: white;}
+#Settings{background-color: white;}
+
+
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('OurShoes', this, 'white')" id="defaultOpen">Home </button>
+<button class="tablink" onclick="openPage('men', this, 'white')" >Men</button>
+<button class="tablink" onclick="openPage('Women', this, 'white')" > Women</button>
+<button class="tablink" onclick="openPage('settings', this, 'white')" > Settings</button>
+
+<div id="settings" class="tabcontent">
+      <style>
+  * {
+      box-sizing: border-box;
+  }
+
+  .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+  }
+
+  /* Clearfix (clear floats) */
+  .row::after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+  </style>
+  <center><h1 style="color: black;">Settings</h1>
+  {{#if errorMessage.length}}
+
+  {{#each errorMessage}}
+    <h3 style="color: black;"> {{this}}</h3>
+  {{/each}}
+  <hr/>
+  {{/if}}
+  <form method = "post" action = "/changePwd">
+  <h2 style="color: black;"> Change Password </h2>
+  <h3 style="color: black;"> Type your new password</h3>
+  <input type = "text" name ="newpwd">
+  <br>
+  <br>
+
+  <h3 style="color: black;"> Confirm your new password </h3>
+  <input type ="text" name = "confirmingpwd">
+  <br>
+  <br>
+
+  <h3 style="color: black;"> Type your current password </h3>
+  <input type = "text" name = "currentpwd">
+
+    <br>
+    <br>
+
+  <input type = "submit" value = "Change password">
+  <input type = "hidden" name ="token" value = "{{token}}">
+</form>
+
+  <h2 style="color: black;" >Logout:  </h2>
+  <form method = "post" action = "/eliminateSession">
+    <input type ="submit"  value ="Logout">
+    <input type = "hidden" name ="token" value = "{{token}}">
+  </form>
+
+  <br>
+  <form method = "post" action = "/showShopCart">
+    <input type ="submit"  value ="Show current shopping cart">
+    <input type = "hidden" name ="token" value = "{{token}}">
+  </form>
+
+  <br>
+
+  <form method = "post" action = "/showHistory">
+    <input type ="submit"  value = "Show shopping history">
+    <input type = "hidden" name ="token" value = "{{token}}">
+  </form>
+</center>
+  </div>
+
+<div id="OurShoes" class="tabcontent">
+  	<center><h1 style="color: black;">Here are our latest sneakers, {{userid}}: </h1></center>
+    <center><h1 style="color: black;">If you want to check out our other sneakers, click on the other tabs: </h1></center>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+  {{#if csrfError.length}}
+    {{#each csrfError}}
+    <h3 style="color: black;"> {{this}}</h3>
+    {{/each}}
+    <hr/>
+    {{/if}}
+
+    {{#if newStock.length}}
+    <div class="row">
+      {{#each newStock}}
+      <div class="column">
+
+
+        <img src= {{this.image}} alt="{{this.shoeName}}" style="width:80%">
+        <center><h2><font face="georgia" color="black">{{this.shoeName}}</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : ${{this.price}}</font></h4></center>
+          <center><h4><font face="georgia" color="black">Category : {{this.category}} </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : {{this.type}}</font></h4></center>
+          <form method = "post" action = "/quantityConfirmed">
+                  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+                  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+                  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="{{this.shoeName}}"></center>
+                  <input type = "hidden" name ="token" value = "{{this.token}}">
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+      </div>
+      	{{/each}}
+        </div>
+        		{{/if}}
+      </div>
+
+
+
+<!-- MEN SECTION --------------------------------------------------------------------------------------------------->
+
+<div id="men" class="tabcontent">
+  <center><h1 style="color: black;">Here are our most popular men sneakers, {{userid}}: </h1></center>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+    {{#if menStock.length}}
+    <div class="row">
+      {{#each menStock}}
+      <div class="column">
+
+
+        <img src= {{this.image}} alt="{{this.shoeName}}" style="width:80%">
+        <center><h2><font face="georgia" color="black">{{this.shoeName}}</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : ${{this.price}}</font></h4></center>
+          <center><h4><font face="georgia" color="black">Category : {{this.category}} </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : {{this.type}}</font></h4></center>
+          <form method = "post" action = "/quantityConfirmed">
+                  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+                  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+                  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="{{this.shoeName}}"></center>
+                    <center><input type = "hidden" name ="token" value = "{{this.token}}"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+      </div>
+        {{/each}}
+        </div>
+            {{/if}}
+      </div>
+      <!-- WOMEN SECTION --------------------------------------------------------------------------------------------------->
+<div id="Women" class="tabcontent">
+  <center><h1 style="color: black">Here are our most popular women sneakers , {{userid}} </h1></center>
+
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+
+
+  {{#if womenStock.length}}
+<div class="row">
+  {{#each womenStock}}
+  <div class="column">
+
+    <img src= {{this.image}} alt="{{this.shoeName}}" style="width:80%">
+    <center><h2><font face="georgia" color="black">{{this.shoeName}}</font></h2></center>
+    <center><h4><font face="georgia" color="black">Price : ${{this.price}}</font></h4></center>
+      <center><h4><font face="georgia" color="black">Category : {{this.category}} </font></h4></center>
+      <center><h4><font face="georgia" color="black">Type : {{this.type}}</font></h4></center>
+      <form method = "post" action = "/quantityConfirmed">
+              <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+              <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+              <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+              <center><input type ="hidden" name = "shoeName" value ="{{this.shoeName}}"></center>
+              <center><input type = "hidden" name ="token" value = "{{this.token}}"></center>
+              <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+      </form>
+
+  </div>
+      {{/each}}
+
+    </div>
+        {{/if}}
+  </div>
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>

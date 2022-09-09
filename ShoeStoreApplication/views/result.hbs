@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Times;
+}
+
+/* Style tab links */
+.tablink {
+    background-color: #b4b4b4;
+    color: black;
+    float: left;
+    border: none;
+    outline: blue;
+    cursor: pointer;
+    padding: 15px 16px;
+    font-size: 20px;
+    width: 33.1%;
+}
+
+.tablink:hover {
+    background-color: #788;
+}
+
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 100px 20px;
+    height: 100%;
+}
+
+#men {background-color: white;}
+#Women{background-color: white;}
+#OurShoes {background-color: white;}
+
+
+</style>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('OurShoes', this, 'white')" id="defaultOpen">Home </button>
+<button class="tablink" onclick="openPage('men', this, 'white')" >Men</button>
+<button class="tablink" onclick="openPage('Women', this, 'white')" > Women</button>
+
+<div id="OurShoes" class="tabcontent">
+  	<center><h1 style="color: black;">Here are our latest sneakers, {{userid}}: </h1></center>
+    <center><h1 style="color: black;">If you want to check out our other sneakers, click on the other tabs: </h1></center>
+    <style>
+* {
+    box-sizing: border-box;
+}
+
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+</style>
+    <div class="row">
+      <div class="column">
+        <img src="https://images.kissclipart.com/png/20181002/jiq/kissclipart-air-jordan-clipart-air-jordan-nike-sports-shoes-f533a1199ff4944b.png" alt="Nike Black Eagle X" style="width:80%">
+        <center><h2><font face="georgia" color="black">Nike Black Eagle X</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : $150.00 </font></h4></center>
+          <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+      </div>
+
+      <div class="column">
+        <img src="https://www.kicksusa.com/media/wysiwyg/brands/nike/Running.jpg" alt="Nike Red Zoom XI" style="width:80%">
+        <center><h2><font face="georgia" color="black">Nike Red Zoom XI</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+        <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+                <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+                <form method = "post" action = "/shopcart">
+                        <center><input type ="hidden" name ="price" value ="150" ></center>
+                        <center><input type ="hidden" name = "category" value ="Both" ></center>
+                        <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                        <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                          <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                </form>
+      </div>
+
+      <div class="column">
+        <img src="https://sneakernews.com/wp-content/uploads/2016/10/nike-ease-design-challenge-50k-grand-prize.jpg" alt="Nike BlueBell" style="width:80%">
+        <center><h2><font face="georgia" color="black">Nike BlueBell</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : $50.00 </font></h4></center>
+        <center><h4><font face="georgia" color="black">Category : Women </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+      </div>
+
+      </div>
+
+
+      <div class="row">
+        <div class="column">
+          <img src="https://www.pngarts.com/files/3/Adidas-Running-Shoes-Transparent-Background-PNG.png" alt="Nike Red Force" style="width:80%">
+          <center><h2><font face="georgia" color="black">Nike Red Force</font></h2></center>
+          <center><h4><font face="georgia" color="black">Price : $70.00 </font></h4></center>
+          <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+        </div>
+
+        <div class="column">
+          <img src="https://cdn.runrepeat.com/i/nike/25314/nike-fl-rue-mens-running-trainers-880994-sneakers-shoes-uk-7-5-us-8-5-eu-42-black-white-001-men-s-black-white-001-cef9-600.jpg" alt="Nike BlackTop IX" style="width:80%">
+          <center><h2><font face="georgia" color="black">Nike BlackTop IX</font></h2></center>
+          <center><h4><font face="georgia" color="black">Price : $70.00 </font></h4></center>
+          <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type:  StyleWear </font></h4></center>
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+        </div>
+
+        <div class="column">
+          <img src="http://pngimg.com/uploads/running_shoes/running_shoes_PNG5782.png" alt="Nike SpeedForce I" style="width:80%">
+          <center><h2><font face="georgia" color="black">Nike SpeedForce I </font></h2></center>
+          <center><h4><font face="georgia" color="black">Price : $50.00 </font></h4></center>
+            <center><h4><font face="georgia" color="black">Category : Women </font></h4></center>
+            <center><h4><font face="georgia" color="black">Type :Running </font></h4></center>
+            <form method = "post" action = "/shopcart">
+                    <center><input type ="hidden" name ="price" value ="150" ></center>
+                    <center><input type ="hidden" name = "category" value ="Both" ></center>
+                    <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                    <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                      <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+            </form>
+        </div>
+      </div>
+
+
+        <div class="row">
+          <div class="column">
+            <img src="https://melbournechapter.net/images/transparent-shoe-air-max-3.png" alt="Nike Air Force" style="width:80%">
+            <center><h2><font face="georgia" color="black">Nike Air Force</font></h2></center>
+            <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+            <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+            <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+            <form method = "post" action = "/shopcart">
+                    <center><input type ="hidden" name ="price" value ="150" ></center>
+                    <center><input type ="hidden" name = "category" value ="Both" ></center>
+                    <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                    <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                      <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+            </form>
+          </div>
+
+          <div class="column">
+            <img src="https://mbtskoudsalg.com/images/jordans-transparent-clear-background-2.png" alt="Nike Red Devils" style="width:80%">
+            <center><h2><font face="georgia" color="black">Nike Red Devils</font></h2></center>
+            <center><h4><font face="georgia" color="black">Price : $150.00 </font></h4></center>
+            <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+                    <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+                    <form method = "post" action = "/shopcart">
+                            <center><input type ="hidden" name ="price" value ="150" ></center>
+                            <center><input type ="hidden" name = "category" value ="Both" ></center>
+                            <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                            <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                              <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                    </form>
+          </div>
+
+          <div class="column">
+            <img src="https://png2.kisspng.com/20180410/euq/kisspng-air-jordan-sneakers-shoe-cement-nike-michael-jordan-5acd3f89c34ac8.4698156215234005857999.png" alt="Jordan Legend XII" style="width:80%">
+            <center><h2><font face="georgia" color="black">Jordan Legend XII</font></h2></center>
+            <center><h4><font face="georgia" color="black">Price : $250.00 </font></h4></center>
+              <center><h4><font face="georgia" color="black">Category : Men, Women </font></h4></center>
+              <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+              <form method = "post" action = "/shopcart">
+                      <center><input type ="hidden" name ="price" value ="150" ></center>
+                      <center><input type ="hidden" name = "category" value ="Both" ></center>
+                      <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                      <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                        <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+              </form>
+          </div>
+        </div>
+      </div>
+
+
+
+<!-- MEN SECTION --------------------------------------------------------------------------------------------------->
+
+<div id="men" class="tabcontent">
+  <center><h1 style="color: black;">Here are our most popular men sneakers, {{userid}}: </h1></center>
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+  <div class="row">
+    <div class="column">
+      <img src="https://mbtskoudsalg.com/images/jordans-transparent-clear-background-1.png" alt="Nike Black Eagle v" style="width:80%">
+      <center><h2><font face="georgia" color="black">Nike Black Eagle IX</font></h2></center>
+      <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+        <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+        <form method = "post" action = "/shopcart">
+                <center><input type ="hidden" name ="price" value ="150" ></center>
+                <center><input type ="hidden" name = "category" value ="Both" ></center>
+                <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                  <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+        </form>
+    </div>
+
+    <div class="column">
+      <img src="http://www.gonulyurdukoyu.com/images/large/nike%20shop%20uk/Nike%20Air%20Jordan%2011%20Retro%20Men%20Shoes%20N1006_LRG.jpg" alt="Nike Red Zoom XI" style="width:80%">
+      <center><h2><font face="georgia" color="black">Jordan White Zooms</font></h2></center>
+      <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+      <form method = "post" action = "/shopcart">
+              <center><input type ="hidden" name ="price" value ="150" ></center>
+              <center><input type ="hidden" name = "category" value ="Both" ></center>
+              <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+              <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+      </form>
+    </div>
+
+    <div class="column">
+      <img src="http://thesource.com/wp-content/uploads/2016/12/cby4fb1jfyadxhp5fnrq.jpg" alt="Nike BlueBell" style="width:80%">
+      <center><h2><font face="georgia" color="black">Nike Blue Angel</font></h2></center>
+      <center><h4><font face="georgia" color="black">Price : $75.00 </font></h4></center>
+        <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+        <form method = "post" action = "/shopcart">
+                <center><input type ="hidden" name ="price" value ="150" ></center>
+                <center><input type ="hidden" name = "category" value ="Both" ></center>
+                <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                  <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+        </form>
+    </div>
+
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <img src="https://financesonline.com/uploads/2018/01/Air-Jordan-V.jpg" alt="Nike Black Eagle X" style="width:80%">
+        <center><h2><font face="georgia" color="black">Jordan Air II</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : $150.00 </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+      </div>
+
+      <div class="column">
+        <img src="http://images.jordansdaily.com/wp-content/uploads/2016/05/air-jordan-1-letterman-4.png" alt="Nike Red Zoom XI" style="width:80%">
+        <center><h2><font face="georgia" color="black">Nike Red Zoom XL</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+        <form method = "post" action = "/shopcart">
+                <center><input type ="hidden" name ="price" value ="150" ></center>
+                <center><input type ="hidden" name = "category" value ="Both" ></center>
+                <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                  <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+        </form>
+      </div>
+
+      <div class="column">
+        <img src="https://flikickz.com/wp-content/uploads/2016/12/air-jordan-i-shattered-backboard-1..jpg" alt="Nike BlueBell" style="width:80%">
+        <center><h2><font face="georgia" color="black">Nike Flames I</font></h2></center>
+        <center><h4><font face="georgia" color="black">Price : $50.00 </font></h4></center>
+          <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+      </div>
+
+      </div>
+      <div class="row">
+        <div class="column">
+          <img src="https://lh3.googleusercontent.com/--0iwk2DvShY/VcSj3kOXdeI/AAAAAAAEgrw/1E4HcO-Kx_o/s1000-Ic42/nike-air-max-ambassador-7-gr-red-black-grey-2-01.jpg" alt="Nike Black Eagle X" style="width:80%">
+          <center><h2><font face="georgia" color="black">Nike Black Eagle V</font></h2></center>
+          <center><h4><font face="georgia" color="black">Price : $150.00 </font></h4></center>
+            <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+            <form method = "post" action = "/shopcart">
+                    <center><input type ="hidden" name ="price" value ="150" ></center>
+                    <center><input type ="hidden" name = "category" value ="Both" ></center>
+                    <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                    <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                      <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+            </form>
+        </div>
+
+        <div class="column">
+          <img src="https://images.kissclipart.com/png/20180831/vhe/kissclipart-basketball-shoes-jordan-shoes-clipart-jumpman-air-7b72419fdad54691.png" alt="Nike Red Zoom XI" style="width:80%">
+          <center><h2><font face="georgia" color="black"> Jordan Red Lava X </font></h2></center>
+          <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+          <form method = "post" action = "/shopcart">
+                  <center><input type ="hidden" name ="price" value ="150" ></center>
+                  <center><input type ="hidden" name = "category" value ="Both" ></center>
+                  <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                  <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                    <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+          </form>
+        </div>
+
+        <div class="column">
+          <img src="https://cdn-s3.si.com/s3fs-public/2016/06/09/aj7_embed_.jpg" alt="Nike BlueBell" style="width:80%">
+          <center><h2><font face="georgia" color="black">Nike Black Mamba</font></h2></center>
+          <center><h4><font face="georgia" color="black">Price : $175.00 </font></h4></center>
+            <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+            <form method = "post" action = "/shopcart">
+                    <center><input type ="hidden" name ="price" value ="150" ></center>
+                    <center><input type ="hidden" name = "category" value ="Both" ></center>
+                    <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                    <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                      <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+            </form>
+        </div>
+
+        </div>
+
+
+
+</div>
+      <!-- WOMEN SECTION --------------------------------------------------------------------------------------------------->
+<div id="Women" class="tabcontent">
+  <center><h1 style="color: black">Here are our most popular women sneakers , {{userid}} </h1></center>
+
+  <style>
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+</style>
+        <div class="row">
+          <div class="column">
+            <img src="https://www.freeiconspng.com/uploads/nike-women-running-shoes-png-image-6.png" alt="Nike Lava Zoom" style="width:80%">
+            <center><h2><font face="georgia" color="black">Nike Lava Zoom </font></h2></center>
+            <center><h4><font face="georgia" color="black">Price : $95.00 </font></h4></center>
+              <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+              <form method = "post" action = "/shopcart">
+                      <center><input type ="hidden" name ="price" value ="150" ></center>
+                      <center><input type ="hidden" name = "category" value ="Both" ></center>
+                      <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                      <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                        <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+              </form>
+          </div>
+
+          <div class="column">
+            <img src="https://www.freeiconspng.com/uploads/nike-running-shoes-download-15.png" alt="Nike Red Zoom XI" style="width:80%">
+            <center><h2><font face="georgia" color="black"> Jordan Red Lava X </font></h2></center>
+            <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+            <form method = "post" action = "/shopcart">
+                    <center><input type ="hidden" name ="price" value ="150" ></center>
+                    <center><input type ="hidden" name = "category" value ="Both" ></center>
+                    <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                    <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                      <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+            </form>
+          </div>
+
+          <div class="column">
+            <img src="https://www.backalleymusic.ca/images/large/nike%20air%20max%2090-258hfu.jpg" alt="Nike BlueBell" style="width:80%">
+            <center><h2><font face="georgia" color="black">Nike Black Air</font></h2></center>
+            <center><h4><font face="georgia" color="black">Price : $175.00 </font></h4></center>
+              <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+              <form method = "post" action = "/shopcart">
+                      <center><input type ="hidden" name ="price" value ="150" ></center>
+                      <center><input type ="hidden" name = "category" value ="Both" ></center>
+                      <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                      <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                        <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+              </form>
+          </div>
+
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <img src="https://dqzrr9k4bjpzk.cloudfront.net/images/11611077/515389277.jpg" alt="Nike Gold Eagle X" style="width:80%">
+              <center><h2><font face="georgia" color="black">Nike Gold Eagle V</font></h2></center>
+              <center><h4><font face="georgia" color="black">Price : $150.00 </font></h4></center>
+                <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+                <form method = "post" action = "/shopcart">
+                        <center><input type ="hidden" name ="price" value ="150" ></center>
+                        <center><input type ="hidden" name = "category" value ="Both" ></center>
+                        <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                        <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                          <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                </form>
+            </div>
+
+            <div class="column">
+              <img src="https://mbtskoudsalg.com/images/kd-drawing-foamposite-3.png" alt="Nike Red Zoom XI" style="width:80%">
+              <center><h2><font face="georgia" color="black">Nike Blue Eagle V </font></h2></center>
+              <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+              <form method = "post" action = "/shopcart">
+                      <center><input type ="hidden" name ="price" value ="150" ></center>
+                      <center><input type ="hidden" name = "category" value ="Both" ></center>
+                      <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                      <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                        <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+              </form>
+            </div>
+
+            <div class="column">
+              <img src="https://sneakerbardetroit.com/wp-content/uploads/2016/01/pure-platinum-foamposite-pro-5.png" alt="Nike BlueBell" style="width:80%">
+              <center><h2><font face="georgia" color="black">Nike White Eagle V</font></h2></center>
+              <center><h4><font face="georgia" color="black">Price : $175.00 </font></h4></center>
+                <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+                <form method = "post" action = "/shopcart">
+                        <center><input type ="hidden" name ="price" value ="150" ></center>
+                        <center><input type ="hidden" name = "category" value ="Both" ></center>
+                        <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                        <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                          <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                </form>
+            </div>
+
+            </div>
+
+
+            <div class="row">
+              <div class="column">
+                <img src="http://thesource.com/wp-content/uploads/2016/01/nike-air-foamposite-1-supreme-black.png" alt="Nike Black Eagle X" style="width:80%">
+                <center><h2><font face="georgia" color="black">Nike Fire Eagle V</font></h2></center>
+                <center><h4><font face="georgia" color="black">Price : $150.00 </font></h4></center>
+                  <center><h4><font face="georgia" color="black">Type : StyleWear </font></h4></center>
+                  <form method = "post" action = "/shopcart">
+                          <center><input type ="hidden" name ="price" value ="150" ></center>
+                          <center><input type ="hidden" name = "category" value ="Both" ></center>
+                          <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                          <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                            <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                  </form>
+              </div>
+
+              <div class="column">
+                <img src="https://sneakerbardetroit.com/wp-content/uploads/2017/06/nike-air-foamposite-one-galaxy-521286-800-3.png" alt="Nike Red Zoom XI" style="width:80%">
+                <center><h2><font face="georgia" color="black"> Nike Galaxy Eagle </font></h2></center>
+                <center><h4><font face="georgia" color="black">Price : $100.00 </font></h4></center>
+                <form method = "post" action = "/shopcart">
+                        <center><input type ="hidden" name ="price" value ="150" ></center>
+                        <center><input type ="hidden" name = "category" value ="Both" ></center>
+                        <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                        <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                          <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                </form>
+              </div>
+
+              <div class="column">
+                <img src="https://mbtskoudsalg.com/images/nike-air-foamposite-one-denim-png-5.png" alt="Nike BlueBell" style="width:80%">
+                <center><h2><font face="georgia" color="black">Nike Grey Mamba</font></h2></center>
+                <center><h4><font face="georgia" color="black">Price : $175.00 </font></h4></center>
+                  <center><h4><font face="georgia" color="black">Type : Running </font></h4></center>
+                  <form method = "post" action = "/shopcart">
+                          <center><input type ="hidden" name ="price" value ="150" ></center>
+                          <center><input type ="hidden" name = "category" value ="Both" ></center>
+                          <center><input type ="hidden" name = "type" value ="StyleWear" ></center>
+                          <center><input type ="hidden" name = "shoeName" value ="Nike Black Eagle X"></center>
+                            <center><input type ="submit" value ="Add To Shopping Cart" ></center>
+                  </form>
+              </div>
+
+              </div>
+</div>
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+</body>
+</html>

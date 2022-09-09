@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Bootleg Nike </title>
+</head>
+
+<body bgcolor="	#0099ff">
+
+		  <form method="POST" action="/settings">
+		<p align = "right" style="color: lightyellow;"><a href='/settings'> Settings </a> </p>
+			</form>
+
+
+			<form method="POST" action="/shopcart">
+		<p align = "right" style="color: lightyellow;"><a href='/shopcart'> Shopping Cart </a> </p>
+			</form>
+
+		<form method="POST" action="/settings">
+		<p align = "right" style="color: lightyellow;"><a href='/login'> Logout </a> </p>
+		</form>
+
+		<p align = "right" style="color: lightyellow;"><a href='/shoes'> Our Shoes </a> </p>
+
+	<div>
+  <center> <h1 style="color: orange;"> Welcome to the Nike Page, {{userid}} </h1> </center>
+ </div>
+
+	<center><h2 style="color: lightblue;"> Below you will see our large collection of shoes and accessories </h2></center>
+	<center><h3 style="color: lightblue;"> {{message}}</h3></center>
+	<center><h3 style="color: lightgreen;"> There are several features on this site that will be useful to you </h3> </center>
+	<center><p style="color: lightyellow;" > On the upper right corner of the site there is a shopping cart feature </p></center>
+	<center> <p  style="color: lightyellow;">At the bottom of the page there is a price comparison tool</p> </center>
+
+	<center><h2> Is this your first time on this site, {{userid}}?  </h2></center>
+
+	<center><h2 style="color: orange;"> Price Comparison Tool: </h2> </center>
+
+	<form method="POST" action="/pricecompare">
+		<center><a href='/pricecompare'> Price Tool </a> </center>
+	</form>
+
+	<center><h2 style="color: orange;"> Here are the shoes you looked at in the previous session: </h2> </center>
+
+	<form method="POST" action="/savedpref">
+		<center><a href='/savedpref'> Saved Preferences </a> </center>
+	</form>
+
+	<hr> </hr>
+
+	<!-- <div>
+  <center> <h1 style="color: orange;"> Welcome to the Nike Page, {{userid}} </h1> </center>
+ </div>
+
+	<center><h2 style="color: lightblue;"> Here you will see our large collection of shoes and accessories </h2></center>
+	<center><h3 style="color: lightblue;"> {{message}}</h3></center>
+	<center><h3 style="color: lightgreen;"> There are several features on this site that will be useful to you </h3> </center>
+	<center><p style="color: lightyellow;" > On the upper right corner of the site there is a shopping cart feature </p></center>
+
+	<center><h2> Is this your first time on this site, {{userid}}?  </h2></center>
+	<center><h2> If it is your first time here {{userid}}, then you can fill out a form in the bottom that will
+		allow us to understand what kind of shoes you are looking for  </h2></center>
+	<center><h2>   </h2></center> -->
+	 <!-- <center><a href='/'> Homepage </a> </center> -->
+
+
+
+	 <!-- <div id="Kids" class="tabcontent">
+	 	<center><h1>Setting Options: </h1> </center>
+	 	<div>
+	 	<center ><h1 style="color: red;"> {{pageTitle}}</h1></center>
+	 	</div>
+	 	<div>
+	 	<h2>Change Username: </h2>
+	 	<p><input type="text" name="userid"/></p>
+
+	 	<h2>Change Password:  </h2>
+	 	<p><input type="text" name="password"/></p>
+
+	 	<input type = "submit" value = "Submit new changes"/>
+
+	 	<h2> Logout: </h2>
+	   <form method="post" action="/login">
+	 	<input type = "submit" value = "Log Out"/>
+	 </form> -->
+	 </div>
+ </body>
+</html>

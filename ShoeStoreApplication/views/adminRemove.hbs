@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+	<meta charset="utf-8">
+	<title>Admin Remove Quantity </title>
+</head>
+<body bgcolor="	#008080">
+
+{{#if csrfError.length}}
+{{#each}}
+<h3 style="color: black;"> {{this}}</h3>
+{{/each}}
+{{/if}}
+
+<center ><h1 style="color: red;"> {{pageTitle}}</h1></center>
+<form method = "post" action = "/updatedStock">
+	<center><h2>How many of this item do you want to remove from stock </h2></center>
+	<center><input type="number" name="quantity" min="1" max = "{{max}}"> </center>
+	<br>
+	<center><input type ="submit" value ="Remove item" ></center>
+	<br>
+	<center><input type ="hidden" name ="price" value ="{{price}}" ></center>
+	<center><input type ="hidden" name = "category" value ="{{category}}" ></center>
+	<center><input type ="hidden" name = "type" value ="{{type}}" ></center>
+	<center><input type ="hidden" name = "shoe" value ="{{shoe}}"></center>
+  <center><input type ="hidden" name = "code" value ="{{code}}"></center>
+	<input type = "hidden" name ="token" value = "{{token}}">
+
+</form>
+<form method = "get" action = "/">
+	<center><input type ="submit" value ="Back to home page" ></center>
+</form>
+</body>
+</html>

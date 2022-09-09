@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Administrator Settings </title>
+</head>
+<body bgcolor="	#008080">
+  <center>
+
+    {{#if csrfError.length}}
+      {{#each csrfError}}
+      <h3 style="color: black;"> {{this}}</h3>
+      {{/each}}
+      <hr/>
+      {{/if}}
+
+  <h1> Administrator Settings </h1>
+  <h2> New Shoes </h2>
+  <table border="1">
+    <tr>
+      <th>Shoe Name </th>
+      <th> Price </th>
+      <th> Category </th>
+      <th>Type</th>
+      <th>Quantity</th>
+      <th>Add</th>
+      <th>Remove</th>
+      <th>Remove Shoe</th>
+      <th>Change Price </th>
+    </tr>
+  {{#if newStock.length}}
+  {{#each newStock}}
+  <tr>
+    <td>{{this.shoeName}}</td>
+    <td> ${{this.price}}</td>
+  <td>  {{this.category}}</td>
+    <td>{{this.type}}</td>
+  <td>  {{this.quantity}}</td>
+  <form method = "post" action = "/AdminAddQuantity">
+  <td><input type = 'submit' value = 'Add Quantity'></td>
+  <center><input type ="hidden" name ="price" value =" {{this.price}}" ></center>
+  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+  <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+  	<input type = "hidden" name ="token" value = "{{this.token}}">
+  </form>
+    <form method = "post" action = "/AdminRemoveQuantity">
+  <td><input type = 'submit' value = 'Remove Quantity' ></td>
+  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+  <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+  	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+
+    <form method = "post" action = "/AdminRemoveCompletely">
+    <td><input type = 'submit' value = 'Remove Shoes' ></td>
+    <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+    <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+    <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+    <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+    	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+
+
+        <form method = "post" action = "/AdminPriceChange">
+        <td><input type = 'submit' value = 'Change Price' ></td>
+        <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+        <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+        <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+        <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+        	<input type = "hidden" name ="token" value = "{{this.token}}">
+        </form>
+  </tr>
+  {{/each}}
+  {{/if}}
+  </table>
+  <hr>
+  <br>
+
+  <h2> Women Shoes </h2>
+  <table border="1">
+    <tr>
+      <th>Shoe Name </th>
+      <th> Price </th>
+      <th> Category </th>
+      <th>Type</th>
+      <th>Quantity</th>
+      <th>Add</th>
+      <th>Remove</th>
+      <th>Remove Shoe</th>
+      <th>Change Price </th>
+    </tr>
+  {{#if womenStock.length}}
+  {{#each womenStock}}
+
+  <tr>
+  <td>   {{this.shoeName}}</td>
+  <td>   ${{this.price}}</td>
+  <td>   {{this.category}}</td>
+  <td>   {{this.type}}</td>
+  <td>   {{this.quantity}}</td>
+
+  <form method = "post" action = "/AdminAddQuantity">
+  <td><input type = 'submit' value = 'Add Quantity'></td>
+  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+  <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+  	<input type = "hidden" name ="token" value = "{{this.token}}">
+  </form>
+    <form method = "post" action = "/AdminRemoveQuantity">
+  <td><input type = 'submit' value = 'Remove Quantity' ></td>
+  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+  <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+  	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+
+    <form method = "post" action = "/AdminRemoveCompletely">
+    <td><input type = 'submit' value = 'Remove Shoes' ></td>
+    <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+    <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+    <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+    <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+    	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+
+
+      <form method = "post" action = "/AdminPriceChange">
+      <td><input type = 'submit' value = 'Change Price' ></td>
+      <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+      <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+      <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+      <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+      	<input type = "hidden" name ="token" value = "{{this.token}}">
+        </form>
+  </tr>
+  {{/each}}
+  {{/if}}
+
+  </table>
+  <hr>
+    <br>
+
+  <h2> Men Shoes </h2>
+  <table border="2">
+    <tr>
+      <th>Shoe Name </th>
+      <th> Price </th>
+      <th> Category </th>
+      <th>Type</th>
+      <th>Quantity</th>
+      <th>Add</th>
+      <th>Remove</th>
+      <th>Remove Shoe</th>
+      <th>Change Price </th>
+
+    </tr>
+  {{#if menStock.length}}
+  {{#each menStock}}
+
+  <tr>
+  <td>   {{this.shoeName}}</td>
+  <td>   ${{this.price}}</td>
+  <td>   {{this.category}}</td>
+  <td>   {{this.type}}</td>
+  <td>   {{this.quantity}}</td>
+  <form method = "post" action = "/AdminAddQuantity">
+  <td><input type = 'submit' value = 'Add Quantity'></td>
+  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+  <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+  	<input type = "hidden" name ="token" value = "{{this.token}}">
+  </form>
+    <form method = "post" action = "/AdminRemoveQuantity">
+  <td><input type = 'submit' value = 'Remove Quantity' ></td>
+  <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+  <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+  <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+  <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+  	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+
+    <form method = "post" action = "/AdminRemoveCompletely">
+    <td><input type = 'submit' value = 'Remove Shoes' ></td>
+    <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+    <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+    <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+    <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+    	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+
+    <form method = "post" action = "/AdminPriceChange">
+    <td><input type = 'submit' value = 'Change Price' ></td>
+    <center><input type ="hidden" name ="price" value ="{{this.price}}" ></center>
+    <center><input type ="hidden" name = "category" value ="{{this.category}}" ></center>
+    <center><input type ="hidden" name = "type" value ="{{this.type}}" ></center>
+    <center><input type ="hidden" name = "shoe" value ="{{this.shoeName}}"></center>
+    	<input type = "hidden" name ="token" value = "{{this.token}}">
+    </form>
+  </tr>
+  {{/each}}
+  {{/if}}
+  </table>
+    <br>
+    <form method = 'post' action = "/eliminateSession">
+    <input type = 'submit' value = 'Logout'>
+    <input type = "hidden" name ="token" value = "{{token}}">
+  </form>
+  <br>
+  <form method = 'post' action = "/AdminAddShoes">
+      <input type = 'submit' value = 'Add Shoes'>
+      <input type = "hidden" name ="token" value = "{{token}}">
+  </form>
+  <br>
+  <form method = "get" action = "/">
+  	<center><input type ="submit" value ="Back to home page" ></center>
+  </form>
+
+</center>
+</body>
+</html>

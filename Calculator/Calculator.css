@@ -1,8 +1,23 @@
 h1
 {
+  margin-top: 50px;
   text-align: center;
   color: white;
   font-family: "Times New Roman", Times, serif;
+}
+
+#nightMode
+{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color:black; 
+  color: green;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 20px;
+  padding: 5px;
+  border: none;
+  
 }
 
 body

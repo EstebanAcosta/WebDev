@@ -1,6 +1,7 @@
 let runningTotal = 0;
+let previousVal;
+let previousOperation;
 let doingArithmetic = false;
-
 
 //Jquery functions that display values on the display, enable/disable scientific buttons options,
 //clear values on the display, negate the value on the display, takes percentage of a vlue and adds
@@ -18,59 +19,81 @@ jQuery(function()
     //otherwise concatonate that digit to the end of the display value
     display.value === "0" || doingArithmetic ? display.value = number : display.value += number;
 
+    previousVal = parseFloat(display.value);
+
    //set this to false since we are only concatonating digits together
     doingArithmetic = false;
   });
 
+  //scientific button functionality
   $("#scientific").on("click",showScientificOptions);
 
+  //clear button functionality
   $("#clear").on("click",function()
   {
     display.value = "0";
 
     runningTotal = 0;
+
+    previousVal = 0;
   });
 
+  //negate button functionality
   $("#negate").on("click",function()
   {
     display.value = String(-1*parseFloat(display.value));
   });
 
+  //percentage button functionality
   $("#percentage").on("click",function()
   {
     display.value = String(parseFloat(display.value) / 100);
   });
 
+  //decimal point functionality
   $("#decimal").on("click",function()
   {
     if(!display.value.includes("."))  display.value+=".";
   });
 
+  //arithmetic operations functionality
+  $(".operations").on("click", doArithmetic);
+
+  $("#darkMode").on("click", enableDarkMode);
+
 });
 
-function arithmetic(operation)
+function doArithmetic()
 {
+  let operation = event.target.value;
+
   let display = document.getElementById("display");
 
   let num = parseFloat(display.value);
 
-  if(operation === "+")
+  switch(operation)
   {
-    runningTotal+=num;
+    case "+":
+     runningTotal === 0? runningTotal = previousVal : runningTotal+=previousVal;
+     break;
 
-  }
-  else if(operation === "-")
-  {
-  }
-  else if(operation === "*")
-  {
-    runningTotal === 0 ? runningTotal = 1 * num : runningTotal*=num;
-  }
-  else
-  {
+    case "-":
+      runningTotal === 0? runningTotal = num: runningTotal-=num;
+    break;
 
-    runningTotal/=num;
+    case "*":
+      runningTotal === 0 ? runningTotal = 1 * num : runningTotal*=num;
+      break;
+     
+    case "/":
+      runningTotal/=num;
+    break; 
+
+    case "=":
+      break;
   }
+
+  previousOperation = operation;
 
   display.value = String(runningTotal);
 
@@ -309,3 +332,15 @@ function inverseFunctions()
 {
 
 }
+
+function enableDarkMode()
+{
+
+}
+
+function disableDarkMode()
+{
+  
+}
+
+

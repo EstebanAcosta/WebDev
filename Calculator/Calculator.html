@@ -9,7 +9,15 @@
     <script src="Calculator.js"></script>
   </head>
   <body>
+    <header>
+     <input id = "nightMode" class = "checkbox" type = "checkbox" >
+     <label for="nightModel" class="label">
+      <i class="dark"></i>
+      <i class="light"></i>
+      <div class="blob"></div>
+    </label>
      <h1> Calculator </h1>
+    </header>
      <section>
       <table>
           <tr>
@@ -25,25 +33,25 @@
             <td> <input class = "buttons numbers" name = "1" type = "button" value="1" > </td>
             <td> <input class = "buttons numbers" name = "2" type = "button" value="2" > </td>
             <td> <input class = "buttons numbers" name = "3" type = "button" value="3" > </td>
-            <td> <input class = "buttons" name = "add" type = "button" value="+" onclick="arithmetic('+')"> </td>
+            <td> <input class = "buttons operations" name = "add" type = "button" value="+" > </td>
           </tr>
           <tr id = "row3">
             <td> <input class = "buttons numbers" name = "4" type = "button" value="4" > </td>
             <td> <input class = "buttons numbers" name = "5" type = "button" value="5" > </td>
             <td> <input class = "buttons numbers" name = "6" type = "button" value="6" > </td>
-            <td> <input class = "buttons" name = "minus" type = "button" value="-" onclick="arithmetic('-')"> </td>
+            <td> <input class = "buttons operations" name = "minus" type = "button" value="-" > </td>
           </tr>
           <tr id = "row4">
             <td> <input class = "buttons numbers" name = "7" type = "button" value="7" > </td>
             <td> <input class = "buttons numbers" name = "8" type = "button" value="8" > </td>
             <td> <input class = "buttons numbers" name = "9" type = "button" value="9" > </td>
-            <td> <input class = "buttons numners" name = "multiply" type = "button" value="*" onclick="arithmetic('*')"> </td>
+            <td> <input class = "buttons opertations" name = "multiply" type = "button" value="*" > </td>
           </tr>
           <tr id = "row5">
             <td> <input class = "buttons numbers" name = "0" type = "button" value="0" > </td>
-            <td> <input class = "buttons" name = "equal" type = "button" value="=" onclick="showResults()"> </td>
+            <td> <input class = "buttons operations" name = "equal" type = "button" value="=" onclick="showResults()"> </td>
             <td> <input id = "decimal" class = "buttons" name = "period" type = "button" value="." > </td>
-            <td> <input class = "buttons" name = "divide" type = "button" value="/" onclick="arithmetic('/')"> </td>
+            <td> <input class = "buttons operations" name = "divide" type = "button" value="/" > </td>
           </tr>
       </table>
    <section>

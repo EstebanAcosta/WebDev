@@ -1,7 +1,8 @@
 let runningTotal = 0;
-let previousVal;
-let previousOperation;
+let previousVal = 0;
+let previousOperation = "";
 let doingArithmetic = false;
+let history = "";
 
 //Jquery functions that display values on the display, enable/disable scientific buttons options,
 //clear values on the display, negate the value on the display, takes percentage of a vlue and adds
@@ -21,6 +22,8 @@ jQuery(function()
 
     previousVal = parseFloat(display.value);
 
+    history+=String(previousVal);
+
    //set this to false since we are only concatonating digits together
     doingArithmetic = false;
   });
@@ -36,6 +39,8 @@ jQuery(function()
     runningTotal = 0;
 
     previousVal = 0;
+
+    history = "";
   });
 
   //negate button functionality
@@ -61,45 +66,48 @@ jQuery(function()
 
   $("#darkMode").on("click", enableDarkMode);
 
-});
-
-function doArithmetic()
+  function doArithmetic()
 {
   let operation = event.target.value;
 
   let display = document.getElementById("display");
 
-  let num = parseFloat(display.value);
+  if(operation !== "=") history+=operation;
 
-  switch(operation)
+  if(runningTotal === 0) runningTotal = previousVal;
+  else
   {
-    case "+":
-     runningTotal === 0? runningTotal = previousVal : runningTotal+=previousVal;
-     break;
+      switch(operation)
+      {
+        case "+":
+          runningTotal+=previousVal;
+          break;
 
-    case "-":
-      runningTotal === 0? runningTotal = num: runningTotal-=num;
-    break;
+        case "-":
+          runningTotal-=previousVal;
+          break;
 
-    case "*":
-      runningTotal === 0 ? runningTotal = 1 * num : runningTotal*=num;
-      break;
-     
-    case "/":
-      runningTotal/=num;
-    break; 
+        case "*":
+          runningTotal*=previousVal;
+          break;
+        
+        case "/":
+          runningTotal/=previousVal;
+          break; 
 
-    case "=":
-      break;
+        case "=":
+         // console.log(history);
+          display.value = eval(history);
+          break;
+      }
   }
 
   previousOperation = operation;
 
-  display.value = String(runningTotal);
+  if(operation !== "=") display.value = String(runningTotal);
 
   doingArithmetic = true;
 
-  // console.log(runningTotal);
 }
 
 //shows the scientific buttons
@@ -253,7 +261,10 @@ function showScientificOptions()
       tableRow.appendChild(tableData);
     }
   }
+
+  //if the scientific button has basic on it
   else {
+    //change the face of the button to say scientific
     scientificButton.value = "Scientific";
 
     rowNum = 1;
@@ -268,6 +279,7 @@ function showScientificOptions()
       while(tableRow.children.length > 4)
       {
         //and all the elements to the right of the fourth element on that row
+        //and remove the table data elements
        tableRow.children[4].remove();
       }
     }
@@ -342,5 +354,8 @@ function disableDarkMode()
 {
   
 }
+
+});
+
 
 

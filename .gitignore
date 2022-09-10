@@ -6,3 +6,5 @@ node_modules/
 .tern-project
 .jshintrc
 .~lock*
+.gitignore
+

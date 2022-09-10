@@ -1,12 +1,24 @@
+//keeps track of the total of the expression
 let runningTotal = 0;
+
+//stores the value that was just entered into the calculator
 let previousVal = 0;
+
+//stores the last operation that was perfomed
 let previousOperation = "";
+
+//stores how many times the equal operatiom has been called 
+let countEqualCall = 0;
+
+//keeps track of when we are/aren't doing arithmetic operations
 let doingArithmetic = false;
+
+//stores a string version of all the mathematical operations we've done on the calculator
 let history = "";
 
-//Jquery functions that display values on the display, enable/disable scientific buttons options,
-//clear values on the display, negate the value on the display, takes percentage of a vlue and adds
-//a decimal point to the value
+/**
+ * Makes sure to not start anything until the document is loaded
+ */
 jQuery(function()
 {
   let display = document.getElementById("display");
@@ -22,8 +34,6 @@ jQuery(function()
 
     previousVal = parseFloat(display.value);
 
-    history+=String(previousVal);
-
    //set this to false since we are only concatonating digits together
     doingArithmetic = false;
   });
@@ -34,6 +44,7 @@ jQuery(function()
   //clear button functionality
   $("#clear").on("click",function()
   {
+    //reset all values
     display.value = "0";
 
     runningTotal = 0;
@@ -61,21 +72,31 @@ jQuery(function()
     if(!display.value.includes("."))  display.value+=".";
   });
 
-  //arithmetic operations functionality
   $(".operations").on("click", doArithmetic);
 
   $("#darkMode").on("click", enableDarkMode);
 
-  function doArithmetic()
+  /**
+   * arithmetic operations functionality
+   */
+  function doArithmetic(event)
 {
   let operation = event.target.value;
 
   let display = document.getElementById("display");
 
-  if(operation !== "=") history+=operation;
+  //if the operation is an equals, add one to the var that keeps track of the num of times equal is called, otherwise reset it to zero. We reset it to zero in the second scenario because the equals button was not clicked more than two consecutive times
+   operation === "=" ? countEqualCall++ : countEqualCall = 0;
 
+   //if the operation we are performing isn't equals or if the equal sign hasn't been called more than two consecutive times, add the the number we just entered into history
+  if(operation !== "=" || countEqualCall < 2 ) history += previousVal;
+  //if there is no runningTotal (as in no math has been done yet), set it to the last number that was input
   if(runningTotal === 0) runningTotal = previousVal;
-  else
+
+  //if there is a running total (we've already started doing some arithmetic)
+  // and the last operation that was done is the same operation that we want to use now
+  //perform the respective arithmetic operation
+  else if(previousOperation === operation)
   {
       switch(operation)
       {
@@ -84,7 +105,7 @@ jQuery(function()
           break;
 
         case "-":
-          runningTotal-=previousVal;
+          runningTotal-=previousVal 
           break;
 
         case "*":
@@ -96,18 +117,37 @@ jQuery(function()
           break; 
 
         case "=":
-         // console.log(history);
           display.value = eval(history);
           break;
       }
+      if(operation !== "=") display.value = String(runningTotal);
+
   }
 
+  //if there is a running total (we've already started doing some arithmetic)
+  // and the last operation that was done isn't the same operation that we want to use now
+  else if(previousOperation !== operation)
+  {
+      //evaluate the expression before we perform the new operation
+      //and display it on the calculator display
+    runningTotal = eval(history);
+
+    display.value = eval(history);
+
+  }
+
+ //add the new operation to the history as long as it's not an equals symbol
+  if(operation != "=") history+=operation;
+
+  console.log(history);
+
+  //after we've used an operation, set that operation as the previous operation
   previousOperation = operation;
 
-  if(operation !== "=") display.value = String(runningTotal);
-
+  //every time we've perfomed some kind of arithmetic, set this to true 
+  //setting this to true tells the calculator when we
+  //want to put more numbers after the operation
   doingArithmetic = true;
-
 }
 
 //shows the scientific buttons
@@ -294,7 +334,7 @@ function showScientificOptions()
   }
 }
 
-function doTrigFunctions()
+function doTrigFunctions(event)
 {
   let display = document.getElementById("display")
 
@@ -323,7 +363,7 @@ function doTrigFunctions()
   }
 }
 
-function doLogFunctions()
+function doLogFunctions(event)
 {
   let display = document.getElementById("display")
 
@@ -342,7 +382,7 @@ function doLogFunctions()
 
 function inverseFunctions()
 {
-
+  let canBeInversed = document.querySelectorAll("");
 }
 
 function enableDarkMode()

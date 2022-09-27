@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html
+{
+    background-color: antiquewhite;
+}
+
+#newButton
+{
+    /* position: absolute;
+    top: 50px;
+    right: 50px; */
+    background-color: gray;
+    border: none;
+    color:white;
+    width: 100px;
+    height: 50px;
+
+}
+
+#newButton:hover
+{
+    cursor: pointer;
+}
+
+#score
+{
+
+}
+
+#best_score
+{
+
+}
+
+h1
+{
+    text-align: center;
+    color: #bbada0;
+    margin: auto;
+}
+
+table
+{
+    border: #bbada0 solid 5px;
+    margin: auto;
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+table td button
+{
+    border: #bbada0 solid 5px;
+}
+
+.buttons
+{
+    height: 125px;
+    width: 125px;
+}

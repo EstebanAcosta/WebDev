@@ -170,9 +170,11 @@ jQuery(function()
      //creates a custom list of additional functions that will be added to the calculator
      const functions = ["sin", "cos" , "tan" , "sin-1" , "cos-1" , "tan-1" , "ln" , "log" , "x!" , "√" , "(" , ")" , "inv" , "x^2" , "x^3"];
    
-     const trigFunctions = ["sin", "cos" , "tan","sin-1" , "cos-1" , "tan-1"];
+     const trigFunctions = ["sin", "cos", "tan","sin-1" , "cos-1" , "tan-1"];
    
      const logFunctions = ["ln" , "log"];
+
+     const canBeInversed = ["sin", "cos", "tan", "ln", "log"];
    
      //keeps track of how many elements we want in a specific row
      const elementsInRow = 3;
@@ -217,7 +219,7 @@ jQuery(function()
    
          //give each button a name, two class names, a type, a value, and set its width and height to 100px
          button.name = functions[i];
-   
+
          button.classList.add("buttons", "scientificButtons");
    
          button.value = functions[i];
@@ -227,13 +229,15 @@ jQuery(function()
          button.style.width = "100px";
    
          button.style.height = "100px";
+
+         if(canBeInversed.includes(button.value))
+         {
+            button.classList.add("inversed");
+         }
    
          if(button.value === "inv")
          {
-           button.addEventListener("click", function()
-           { 
-   
-           });
+           button.addEventListener("click", inverseFunctions);
          }
    
          else if(trigFunctions.includes(button.value))
@@ -401,7 +405,7 @@ jQuery(function()
    
    function inverseFunctions()
    {
-     let canBeInversed = document.querySelectorAll("");
+     let canBeInversed = document.querySelectorAll(".inversed");
 
      let trigFun = ["sec","csc","cot"];
 
@@ -420,11 +424,7 @@ jQuery(function()
 
    function factorial(n)
    {
-    if(n === 0 || n === 1)
-    {
-
-      return 1;
-    }
+    if(n === 0 || n === 1) return 1;
 
     return n * factorial(n - 1);
    }

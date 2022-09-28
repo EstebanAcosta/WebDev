@@ -8,47 +8,59 @@ html
     background-color: antiquewhite;
 }
 
-#newButton
+header
 {
-    /* position: absolute;
-    top: 50px;
-    right: 50px; */
-    background-color: gray;
-    border: none;
-    color:white;
-    width: 100px;
-    height: 50px;
-
-}
-
-#newButton:hover
-{
-    cursor: pointer;
-}
-
-#score
-{
-
-}
-
-#best_score
-{
-
+    display: flex;
+    align-items: center;
 }
 
 h1
 {
     text-align: center;
-    color: #bbada0;
+    color: grey;
     margin: auto;
+    font-size: 4em;
+}
+
+#newGameButton
+{
+    background-color: gray;
+    border-radius: 10px;
+    border: none;
+    color:white;
+    font-size: 1.10em;
+    width: 100px;
+    height: 50px;
+
+}
+
+#newGameButton:hover
+{
+    cursor: pointer;
+}
+
+#score_box
+{
+    height: 50px;
+    width: 100px;
+    border: #bbada0 solid 5px;
+    text-align: center;
+}
+
+#best_score_box
+{
+    height: 50px;
+    width: 100px;
+    border: #bbada0 solid 5px;
+    text-align: center;
 }
 
 table
 {
     border: #bbada0 solid 5px;
-    margin: auto;
-    margin-top: 50px;
+    margin: 50px auto;
     border-collapse: collapse;
+    
 }
 
 table td button

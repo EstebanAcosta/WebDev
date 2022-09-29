@@ -8,18 +8,53 @@ html
     background-color: antiquewhite;
 }
 
+main
+{
+    margin: 100px auto;
+}
+
 header
+{
+    margin: auto;
+    border: black solid 2px;
+    width:500px;
+    height: 100px;
+}
+
+.flex
 {
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.flex-items
+{
+    text-align: center;
+    gap: 1rem;
+}
+
+#score_box, #best_score_box
+{
+    height: 50px;
+    width: 100px;
+    background-color: #bbada0;
+    color: white;
+    border-radius: 10px;
+    margin: auto;
 }
 
 h1
 {
-    text-align: center;
     color: grey;
     margin: auto;
     font-size: 4em;
+}
+
+section
+{
+    margin: 25px auto;
+    width:500px;
 }
 
 #newGameButton
@@ -39,25 +74,10 @@ h1
     cursor: pointer;
 }
 
-#score_box
-{
-    height: 50px;
-    width: 100px;
-    border: #bbada0 solid 5px;
-    text-align: center;
-}
-
-#best_score_box
-{
-    height: 50px;
-    width: 100px;
-    border: #bbada0 solid 5px;
-    text-align: center;
-}
-
 table
 {
     border: #bbada0 solid 5px;
+    border-radius: 10px;
     margin: 50px auto;
     border-collapse: collapse;
     

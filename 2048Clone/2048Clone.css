@@ -10,22 +10,60 @@ html
 
 main
 {
-    margin: 100px auto;
+    margin: 50px auto;
 }
 
 header
 {
     margin: auto;
-    border: black solid 2px;
     width:500px;
     height: 100px;
+}
+
+header h1
+{
+    color: #bbada0;
+    letter-spacing: 2px;
+    margin: auto;
+    font-size: 4.5rem;
+    flex: 2;
+}
+
+h1 span
+{
+    color: dimgray;
+}
+
+.grid
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
+}
+
+.grid-items
+{
+    text-align: center;
+}
+
+section h3
+{
+    color: dimgray;
+}
+
+section h3 span
+{
+    font-weight: bold;
+
 }
 
 .flex
 {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .flex-items
@@ -34,38 +72,31 @@ header
     gap: 1rem;
 }
 
+
 #score_box, #best_score_box
 {
     height: 50px;
     width: 100px;
     background-color: #bbada0;
     color: white;
-    border-radius: 10px;
-    margin: auto;
-}
-
-h1
-{
-    color: grey;
-    margin: auto;
-    font-size: 4em;
+    border-radius: 5px;
 }
 
 section
 {
-    margin: 25px auto;
+    margin: 0 auto;
     width:500px;
 }
 
 #newGameButton
 {
     background-color: gray;
-    border-radius: 10px;
+    border-radius: 5px;
     border: none;
     color:white;
     font-size: 1.10em;
-    width: 100px;
-    height: 50px;
+    width: 125px;
+    height:50px;
 
 }
 
@@ -74,22 +105,34 @@ section
     cursor: pointer;
 }
 
+h3
+{
+    font-weight: normal;
+}
 table
 {
-    border: #bbada0 solid 5px;
     border-radius: 10px;
     margin: 50px auto;
     border-collapse: collapse;
-    
 }
 
-table td button
+table td
 {
-    border: #bbada0 solid 5px;
+    /* border: dimgray solid 5px; */
 }
 
-.buttons
+.table-buttons
 {
     height: 125px;
     width: 125px;
+    border-radius: 5px;
+    /* border: dimgray solid 5px; */
+    background-color: silver;
+}
+
+
+footer
+{
+    margin:auto;
+    width: 500px;
 }

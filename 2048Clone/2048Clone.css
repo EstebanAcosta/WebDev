@@ -13,6 +13,7 @@ main
     margin: 50px auto;
 }
 
+/* The top part of the site */
 header
 {
     margin: auto;
@@ -37,7 +38,7 @@ h1 span
 .grid
 {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(2,1fr);
     gap: 1rem;
     justify-items: center;
     align-items: center;
@@ -48,22 +49,38 @@ h1 span
     text-align: center;
 }
 
-section h3
+#score_box, #best_score_box
 {
-    color: dimgray;
+    display: inline-block;
+    height: 50px;
+    width: 100px;
+    padding: 5px;
+    background-color: #bbada0;
+    color: white;
+    border-radius: 5px;
 }
 
-section h3 span
-{
-    font-weight: bold;
-
-}
+/* The middle part of the site */
 
 .flex
 {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 0 auto;
+    width:500px;
+}
+
+.flex h3
+{
+    color: dimgray;
+    font-weight: normal;
+}
+
+.font-style
+{
+    font-weight: bold;
+
 }
 
 .flex-items
@@ -72,25 +89,9 @@ section h3 span
     gap: 1rem;
 }
 
-
-#score_box, #best_score_box
-{
-    height: 50px;
-    width: 100px;
-    background-color: #bbada0;
-    color: white;
-    border-radius: 5px;
-}
-
-section
-{
-    margin: 0 auto;
-    width:500px;
-}
-
 #newGameButton
 {
-    background-color: gray;
+    background: brown;
     border-radius: 5px;
     border: none;
     color:white;
@@ -105,34 +106,53 @@ section
     cursor: pointer;
 }
 
-h3
-{
-    font-weight: normal;
-}
+/* Settings for the table */
+
 table
 {
-    border-radius: 10px;
     margin: 50px auto;
-    border-collapse: collapse;
+    border-collapse:collapse;
+    border-radius: 5px;
 }
 
-table td
+table td input
 {
-    /* border: dimgray solid 5px; */
+    border: dimgray solid 3px;
 }
 
 .table-buttons
 {
     height: 125px;
     width: 125px;
-    border-radius: 5px;
-    /* border: dimgray solid 5px; */
-    background-color: silver;
+    background: #bbada0;
 }
 
+#row1 td:first-child input
+{
+  border-top-left-radius: 20px;
+}
+
+#row1 td:last-child input
+{
+  border-top-right-radius: 20px;
+}
+
+#row4 td:first-child input
+{
+  border-bottom-left-radius: 20px;
+}
+
+#row4 td:last-child input
+{
+  border-bottom-right-radius: 20px;
+}
+
+/* The footer section */
 
 footer
 {
     margin:auto;
     width: 500px;
+    padding-bottom: 20px;
+    border-bottom: solid grey 2px;
 }

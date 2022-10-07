@@ -10,81 +10,85 @@
     <body>
         <main>
             <header class = "grid">
-                <h1 class = "grid-items"> <span>2048</span>.io </h1>
-                <div id = "score_box" class = "grid-items">
+                <div class = "grid-items"> 
+                    <h1> <span>2048</span>.io </h1>
+                </div>
+                <div class = "grid-items">
+                    <div id = "score_box">
                         <h3>Score</h3>
                         <p>0</p>
-                </div>
-                <div id = "best_score_box" class = "grid-items">
-                        <h3>Best Score</h3>
+                    </div>
+                    <div id = "best_score_box">
+                        <h3>Best</h3>
                         <p>0</p>
-                </div>
+                    </div>
+            </div>
             </header>
-            <section class = "flex">
-                <h3 class = "flex-items"> Join the numbers and get to the <span>2048 tile!</span></h3>
-                <button id = "newGameButton" class = "flex-items">New Game</button>
-            </section>
+            <div class = "flex">
+                <h3 class = "flex-items"> Join the numbers and get to the <span class = "font-style">2048 tile!</span></h3>
+                <input type = "button" id = "newGameButton" class = "flex-items" value = "New Game" disabled></input>
+            </div>
             <table>
                 <tr id = "row1">
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                 </tr>
                 <tr id = "row2">
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                 </tr>
                 <tr id = "row3">
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                      <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                 </tr>
                 <tr id = "row4">
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                     <td>
-                        <button type = "button" class = "table-buttons" disabled></button>
+                        <input type = "button" class = "table-buttons" disabled></input>
                     </td>
                 </tr>
             </table>
             <footer>
-                <p> HOW TO PLAY: Use your arrow keys to move the tiles.
-                     When two tiles with the same number touch, they merge into one!
+                <p><span class = "font-style"> HOW TO PLAY: </span> Use your <span class = "font-style"> arrow keys </span> to move the tiles.
+                     When two tiles with the same number touch, they <span class = "font-style"> merge into one! </span>
                </p>
             </footer>
         </main>

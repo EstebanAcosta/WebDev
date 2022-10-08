@@ -37,9 +37,10 @@ table
 
 table td input
 {
-  border: white solid;
+  border: white solid 2px;
   height: 100px;
   width: 100px;
+  display: block;
 }
 
 .buttons

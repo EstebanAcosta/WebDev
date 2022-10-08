@@ -121,6 +121,7 @@ table
 table td input
 {
     border: dimgray solid 3px;
+    display:block;
 }
 
 .table-buttons

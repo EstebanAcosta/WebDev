@@ -1,11 +1,15 @@
+/*CSS Reset*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Styles for the entire page */
 html
 {
-    background-color: antiquewhite;
+    background-color: #faf8ef;
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 main
@@ -13,7 +17,7 @@ main
     margin: 50px auto;
 }
 
-/* The top part of the site */
+/* Styles for the top part of the site */
 header
 {
     margin: auto;
@@ -60,7 +64,7 @@ h1 span
     border-radius: 5px;
 }
 
-/* The middle part of the site */
+/* Styles for the middle part of the site */
 
 .flex
 {
@@ -68,6 +72,7 @@ h1 span
     align-items: center;
     justify-content: space-evenly;
     margin: 0 auto;
+    gap: 1rem;
     width:500px;
 }
 
@@ -80,13 +85,11 @@ h1 span
 .font-style
 {
     font-weight: bold;
-
 }
 
 .flex-items
 {
     text-align: center;
-    gap: 1rem;
 }
 
 #newGameButton
@@ -106,7 +109,7 @@ h1 span
     cursor: pointer;
 }
 
-/* Settings for the table */
+/* Styles for the table */
 
 table
 {
